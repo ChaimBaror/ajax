@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ajax</title>
 </head>
 
 <body>
@@ -12,7 +12,6 @@
         .conter {
             display: flex;
             justify-content: space-around;
-            color: blue;
 
         }
     </style>
@@ -20,34 +19,56 @@
 
     <div class="conter">
 
-        <div class="html">
+        <div class="html" style="background-color: coral;">
 
         </div>
-        <div class="js">
+        <div class="js" style="background-color: rebeccapurple;">
 
         </div>
-        <div class="txt">
+        <div class="txt" style="background-color: violet ;">
 
         </div>
-        <div class="json">
+        <div class="json" style="background-color: wheat;">
 
         </div>
     </div>
 
+    <script>
 
-<script>
+        let jsonresult;
 
-
-       (function loadDoc() {
+        (function loadDoc() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.querySelector(".json").innerHTML = this.responseText;
+
+                    document.querySelector(".json").innerHTML = (this.responseText)
+                    jsonresult = JSON.parse(this.responseText)
+
                 }
             };
-                xhttp.open("GET", "C:\Users\Shira\Desktop\chaim\db.doc.json");
-                xhttp.send();
-            })()
+            xhttp.open("GET", "https://raw.githubusercontent.com/ChaimBaror/ajax/master/db/doc.json");
+            xhttp.send();
+        })();
 
- </script>
+
+        function setloadDoc(url, tergEl) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    tergEl.innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+
+
+        setloadDoc('https://raw.githubusercontent.com/ChaimBaror/ajax/master/db/doc.js', document.querySelector(".js"));
+        setloadDoc('https://raw.githubusercontent.com/ChaimBaror/ajax/master/db/%E2%80%ABdoc.txt', document.querySelector(".txt"));
+        setloadDoc('https://raw.githubusercontent.com/ChaimBaror/ajax/master/db/doc.json', document.querySelector(".json"));
+        setloadDoc('https://raw.githubusercontent.com/ChaimBaror/ajax/master/db/doc.html', document.querySelector(".html"))
+
+    </script>
+
 </html>
