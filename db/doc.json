@@ -1,10 +1,10 @@
 {
-     "firstName": "יעקב",
-     "lastName": "ישראלי",
+     "firstName": "chaim",
+     "lastName": "json",
      "address": {
-         "streetAddress": "רחוב המשעול, 13",
-         "city": "ירושלים",
-         "state": "ישראל",
+         "streetAddress": "Avratech : 7",
+         "city": "bnei brak",
+         "state": "israel",
          "postalCode": 10021
      },
      "phoneNumbers": [

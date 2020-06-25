@@ -1,21 +1,18 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="bank.css">
-    </head>
-    <body>
-        <h1>Super Bank App By Avratech 7</h1>
+<body>
 
-        <div class="bank-app">
-            <h2>All Accounts List</h2>
-            <section class="accounts-list">
-            </section>
+<h2>HTML Forms</h2>
 
-            <h2>Account Details Panel</h2>
-            <section class="details-panel">
-            </section>
-        </div>
-        <script src="c.js"></script>
-        <script src="database.js"></script>
-        <script src="bank.js"></script>
-    </body>
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+</body>
 </html>

@@ -26,19 +26,6 @@ function bankStart(){
 init();
 }
 
-/*
-class Account {
-    ID;     //int
-    ClientId;  //client class
-    Balance;    //int
-
-    class Client {
-    firstName;
-    lastName;
-    ID;
-}
-}*/
-
 let templates = {
     account : `<div class="account flex-col">
         <div> <label>ID: </label> <span>[ID]</span> </div>
