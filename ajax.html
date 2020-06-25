@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .conter {
+            display: flex;
+            justify-content: space-around;
+            color: blue;
+
+        }
+    </style>
+
+
+    <div class="conter">
+
+        <div class="html">
+
+        </div>
+        <div class="js">
+
+        </div>
+        <div class="txt">
+
+        </div>
+        <div class="json">
+
+        </div>
+    </div>
+
+
+<script>
+
+
+       (function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.querySelector(".json").innerHTML = this.responseText;
+                }
+            };
+                xhttp.open("GET", "C:\Users\Shira\Desktop\chaim\db.doc.json");
+                xhttp.send();
+            })()
+
+ </script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .conter {
+            display: flex;
+            justify-content: space-around;
+            color: blue;
+
+        }
+    </style>
+
+
+    <div class="conter">
+        <div class="but-asy">
+            <button>Start async jobs</button>
+            <ul id="ul-asy"></ul>
+        </div>
+        <div class="but-syn">
+            <button type="submit">Start sync jobs</button>
+            <ul id="ul-syn"></ul>
+        </div>
+    </div>
+
+
+    <script>
+        let jobs = {
+            a: function () { return ("im  A") },
+            b: function () { return ("any B") },
+            c: function () { return ("ani C") },
+            d: function () { return ("ani  D") },
+
+
+            e: function (callback) { setTimeout(() => { callback("im e") }, 250) },
+            f: function (callback) { setTimeout(() => { callback("this f") }, 1250) },
+            g: function (callback) { setTimeout(() => { callback("GGG") }, 2150) },
+            p: function (callback) { setTimeout(() => { callback("is P") }, 250) },
+        }
+        let listsyn = document.querySelector("#ul-syn")
+        let listasy = document.querySelector("#ul-asy")
+
+
+        function CreateLiwthTime(txt) {
+            let d = new Date();
+            return `<li>${d.getSeconds()}:${d.getMilliseconds()} ----- ${txt}<li>`
+        }
+
+        document.querySelector(".but-syn").onclick = function () {
+
+            listsyn.innerHTML += CreateLiwthTime(jobs.a());
+            listsyn.innerHTML += CreateLiwthTime(jobs.b());
+            listsyn.innerHTML += CreateLiwthTime(jobs.c());
+            listsyn.innerHTML += CreateLiwthTime(jobs.d());
+
+            jobs.e(function (map) {
+                listsyn.innerHTML += CreateLiwthTime(map);
+            })
+            jobs.f(function (map) {
+                listsyn.innerHTML += CreateLiwthTime(map);
+            })
+            jobs.g(function (map) {
+                listsyn.innerHTML += CreateLiwthTime(map);
+            })
+            jobs.p(function (map) {
+                listsyn.innerHTML += CreateLiwthTime(map);
+            })
+
+
+        }
+
+        document.querySelector(".but-asy").onclick = function () {
+
+            listasy.innerHTML += CreateLiwthTime(jobs.a());
+            listasy.innerHTML += CreateLiwthTime(jobs.b());
+            listasy.innerHTML += CreateLiwthTime(jobs.c());
+            listasy.innerHTML += CreateLiwthTime(jobs.d());
+
+            jobs.e(function (map) {
+                listasy.innerHTML += CreateLiwthTime(map);
+            })
+            jobs.f(function (map) {
+                listasy.innerHTML += CreateLiwthTime(map);
+            })
+            jobs.g(function (map) {
+                listasy.innerHTML += CreateLiwthTime(map);
+            })
+            jobs.p(function (map) {
+                listasy.innerHTML += CreateLiwthTime(map);
+            })
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
