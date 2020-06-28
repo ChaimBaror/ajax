@@ -9,31 +9,8 @@
      },
      "phoneNumbers": [
          "212 555-1234",
-         "646 555-4567"
+         "646 555-https://zoom.us/j/63950107524567"
      ]
-     
-      "firstName": "joni",
-     "lastName": "joly",
-     "address": {
-         "streetAddress": "Avratech : 17",
-         "city": "bnei brak",
-         "state": "israel",
-         "postalCode": 10221
-     },
-     "phoneNumbers": [
-         "212 555-1234",
-         "646 555-4567"
-     ]
- "firstName": "david",
-     "lastName": "loool",
-     "address": {
-         "streetAddress": "Avratech : 57",
-         "city": "bnei brak",
-         "state": "israel",
-         "postalCode": 10021
-     },
-     "phoneNumbers": [
-         "212 555-1234",
-         "646 555-4567"
-     ]
+
+   
  }
